@@ -1,0 +1,210 @@
+/* 1. Ajustes Globales y Fondo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trocchi", serif;
+    background-image: url("Imagenes/Fondo1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Header y Navegación */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(125, 161, 204, 0.85);
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.logo {
+    padding: 8px 15px;
+    border-radius: 50px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 0.5px;
+}
+nav {
+    display: flex;
+    gap: 8px;
+}
+nav a {
+    text-decoration: none;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover {
+    background: #4f79a8;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* 3. Sección de Certificados y Carrusel */
+.seccion-certificados {
+    text-align: center;
+    padding: 30px 0;
+    position: relative; /* Necesario para posicionar elementos internos */
+}
+
+.titulo-seccion {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.contenedor-principal-carrusel {
+    width: 100%;
+    overflow: hidden; /* Esconde las tarjetas que sobran */
+}
+
+.carrusel-deslizable {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto; /* Permite el deslizamiento */
+    scroll-snap-type: x mandatory; /* Ajuste magnético al centro */
+    padding: 40px;
+    scroll-behavior: smooth; /* Hace que el movimiento sea fluido */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar barra de scroll en todos los navegadores */
+.carrusel-deslizable::-webkit-scrollbar {
+    display: none;
+}
+.carrusel-deslizable {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* 4. Tarjetas de Certificado */
+.certificado-card {
+    flex: 0 0 350px; /* Ancho fijo para cada tarjeta */
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    scroll-snap-align: center; /* Se detiene justo en el centro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificado-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.imagen-zoom-contenedor {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-zoom-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Para que el certificado se vea completo */
+    transition: transform 0.5s ease;
+}
+
+.certificado-card:hover .imagen-zoom-contenedor img {
+    transform: scale(1.1); /* Efecto de zoom suave al pasar el mouse */
+}
+
+.certificado-card p, .nav-link-proyecto {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+    display: block;
+    text-decoration: none;
+}
+
+/* 5. Flechas de Control */
+.controles-carrusel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.flecha {
+    background: white;
+    border: 2px solid #4f79a8;
+    color: #4f79a8;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.flecha:hover {
+    background: #4f79a8;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* 6. Botones de Navegación y Pie de Página */
+.btn-regresar {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.4s;
+    border: 2px solid white;
+}
+
+.btn-regresar:hover {
+    background: #4f79a8;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.pie-pagina {
+    background: rgba(125, 161, 204, 0.9);
+    text-align: center;
+    padding: 25px;
+    margin-top: auto;
+}
+
+.texto-footer {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}

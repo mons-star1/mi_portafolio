@@ -1,0 +1,155 @@
+/* 1. Ajustes Globales y Fondo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trocchi", serif;
+    background-image: url("Imagenes/Fondo1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Header y Navegación */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(125, 161, 204, 0.85);
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.logo {
+    padding: 8px 15px;
+    border-radius: 50px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 0.5px;
+}
+nav {
+    display: flex;
+    gap: 8px;
+}
+nav a {
+    text-decoration: none;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover {
+    background: #4f79a8;
+    color: white;
+    transform: scale(1.05);
+}
+.contacto-seccion {
+    display: flex;
+    justify-content: center;
+    padding: 25px 15px;
+}
+.tarjeta-contacto {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+    border: 1px solid #020202; 
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.1); 
+}
+.titulo-contacto {
+    color: #000000;
+    font-size: 25px;
+}
+.linea-separadora {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 15px 0 25px 0;
+}
+.grupo-input {
+    margin-bottom: 15px;
+    text-align: left;
+}
+.grupo-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-size: 15px;
+}
+.grupo-input textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+#apellidos, #telefono {
+    width: 70%;
+}
+.contenedor-boton {
+    text-align: center;
+    margin-top: 20px;
+}
+.boton-enviar {
+    background-color: #f9f9f9;
+    border: 2px solid #000000;
+    color: #666;
+    padding: 8px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+.boton-enviar:hover {
+    background-color: #000000;
+    color: white;
+    transform: scale(1.1);
+}
+.btn-regresar {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.4s;
+    border: 2px solid white;
+}
+.btn-regresar:hover {
+    background: #4f79a8;
+    transform: translateY(-5px);
+}
+.pie-pagina {
+    background: rgba(125, 161, 204, 0.9);
+    text-align: center;
+    padding: 25px;
+    margin-top: auto;
+}
+
+.texto-footer {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}

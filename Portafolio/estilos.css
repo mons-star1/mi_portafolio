@@ -1,0 +1,102 @@
+/* 1. Ajustes Globales y Fondo */
+body {
+    margin: 0;
+    padding: 20;
+    font-family: "Trocchi", serif;
+    background-image: url("Imagenes/fondo\ del\ inicio.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Header y Navegación */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(125, 161, 204, 0.85);
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.logo {
+    padding: 8px 15px;
+    border-radius: 50px;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 0.5px;
+}
+nav {
+    display: flex;
+    gap: 8px;
+}
+nav a {
+    text-decoration: none;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover {
+    background: #4f79a8;
+    color: white;
+    transform: scale(1.05);
+}
+.bienvenida {
+    background: rgba(255, 250, 250, 0.5); /* Blanco muy suave */
+    backdrop-filter: blur(10px);
+    width: 80%;
+    max-width: 900px;
+    margin: auto; /* Centra vertical y horizontalmente */
+    padding: 80px 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.bienvenida h2 {
+    font-family: 'Arial Black', sans-serif; /* Fuente gruesa para el título */
+    font-size: 70px;
+    margin: 0 0 30px 0;
+    color: #000;
+    letter-spacing: -2px;
+}
+
+/* Texto de la Universidad e Ingeniería */
+.presentacion {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+/* 5. Footer (Pie de página) */
+.pie-pagina {
+    background: rgba(125, 161, 204, 0.9);
+    text-align: center;
+    padding: 25px;
+    margin-top: auto; /* Empuja el footer al final */
+}
+
+.texto-footer {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}

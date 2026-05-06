@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificados | Portafolio</title>
+    <link rel="stylesheet" href="estilos5.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            MORALES E. MONTSERRAT
+        </div>
+        <nav>
+            <a href="Inicio.html">🏡</a>
+            <a href="hoja1.html">👤 INFORMACIÓN PERSONAL</a>
+            <a href="hoja2.html">⚡ HABILIDADES</a>
+            <a href="hoja3.html">🎓 ESTUDIOS</a>
+            <a href="hoja4.html">💼 TRABAJOS</a>
+            <a href="hoja5.html">📜 CERTIFICADOS</a>
+            <a href="hoja6.html">📧 CONTACTOS</a>
+        </nav>
+    </header>
+
+    <section class="seccion-certificados">
+        <h2 class="titulo-seccion">CERTIFICADOS Y PROYECTOS</h2>
+
+        <div class="contenedor-principal-carrusel">
+            <div class="carrusel-deslizable">
+
+                <!-- Tarjeta 1 -->
+                <div class="certificado-card">
+                    <div class="imagen-zoom-contenedor">
+                        <img src="Imagenes/Titulacion.jpeg" alt="Título de Técnico">
+                    </div>
+                    <p>Técnico en Informática</p>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="certificado-card">
+                    <div class="imagen-zoom-contenedor">
+                        <img src="Imagenes/Detectordegas.jpg" alt="Detector de Gas">
+                    </div>
+                    <p>Detector de Gas</p>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="certificado-card">
+                    <div class="imagen-zoom-contenedor">
+                        <img src="Imagenes/Certificado.png" alt="Redes">
+                    </div>
+                    <p>Fundamentos de redes</p>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="certificado-card">
+                    <div class="imagen-zoom-contenedor">
+                        <img src="Volumetria.png" alt="Volumetria">
+                    </div>
+                    <p>Volumetria</p>
+                </div>
+
+                <!-- Tarjeta 5 -->
+                <div class="certificado-card">
+                    <div class="imagen-zoom-contenedor">
+                        <img src="ranita.jpg" alt="Restaurante">
+                    </div>
+                    <div class="enlace-contenedor">
+                        <a href="restaurante-master/index.html" class="nav-link-proyecto" target="_blank">
+                            Visitar Restaurante La Ranita Tapatía
+                        </a>
+                    </div>
+
+                </div>
+                <div class="certificado-card">
+                    <div class="imagen-zoom-contenedor">
+                        <img src="Imagenes/sistema equi.png" alt="Volumetria">
+                    </div>
+                    <p>Sistema de equilibrio</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="controles-carrusel">
+    <button class="flecha prev" onclick="moverCarrusel(-1)">❮</button>
+    <button class="flecha next" onclick="moverCarrusel(1)">❯</button>
+</div>
+    </section>
+
+    <a href="Inicio.html" class="btn-regresar">⬅️ Inicio</a>
+
+    <footer class="pie-pagina">
+        <p class="texto-footer">@Morales Espinosa Montserrat</p>
+    </footer>
+
+</body>
+<script>
+    const carrusel = document.querySelector('.carrusel-deslizable');
+    let intervalo = null;
+
+    // --- CONFIGURACIÓN DE VELOCIDAD ---
+    const TIEMPO_ESPERA = 3000; // 3000ms = 3 segundos entre cada movimiento.
+    // ----------------------------------
+
+    // Función para mover con flechas
+    function moverCarrusel(direccion) {
+        const desplazamiento = 380; // Ancho de la card + gap
+        carrusel.scrollBy({
+            left: desplazamiento * direccion,
+            behavior: 'smooth'
+        });
+    }
+
+    // Función de movimiento automático
+    const startAutoScroll = () => {
+        intervalo = setInterval(() => {
+            if (carrusel.scrollLeft + carrusel.offsetWidth >= carrusel.scrollWidth - 10) {
+                carrusel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                moverCarrusel(1);
+            }
+        }, TIEMPO_ESPERA); // <--- Aquí se aplica la velocidad
+    };
+
+    // Pausar al pasar el mouse
+    carrusel.addEventListener('mouseenter', () => clearInterval(intervalo));
+    carrusel.addEventListener('mouseleave', startAutoScroll);
+
+    startAutoScroll();
+</script>
+</html>
